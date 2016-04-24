@@ -20,7 +20,16 @@ public class Pokemon {
 	private final int LONGEST_STRING = 15;
 	
 	public Pokemon() {
-		new Pokemon(0, "", "", "", 0, 0, 0, 0, 0, 0, 0);
+		this.nr=-1;
+		this.name="";
+		this.type1="";
+		this.type2="";
+		this.total=0;
+		this.atk=0;
+		this.def=0;
+		this.spatk=0;
+		this.spdef=0;
+		this.speed=0;
 	}
 	
 	public Pokemon( int nr,String name, String type1, String type2,
@@ -68,10 +77,11 @@ public class Pokemon {
 	}
 	
 	public Pokemon prev() {
-		if(prev != null) {
+	/*	if(prev != DoubleLinkedList.head) {
 			return prev;
 		}
-		return nullPkm;
+		return new Pokemon();*/
+		return prev;
 	}
 	
 	public void setNext(Pokemon pkm) {
@@ -79,10 +89,11 @@ public class Pokemon {
 	}
 	
 	public Pokemon next() {
-		if(next != null) {
+		/*if(next != DoubleLinkedList.tail) {
 			return next;
 		}
-		return nullPkm;
+		return new Pokemon();*/
+		return next;
 	}
 	
 	public String toString() {

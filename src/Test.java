@@ -17,14 +17,13 @@ public class Test {
 		pkm2.setNext(tail);
 		tail.setNext(null);
 		tail.setPrev(pkm2);*/
-		
+		                
 		dl.insert(pkm);
-		dl.insert(pkm);
-		dl.toString();
+		dl.insert(pkm2);
+		System.out.println(dl.toString());
 		System.out.println();
-		dl.delete(pkm2);
-		dl.toString();
-
+		dl.delete(pkm);
+                System.out.println(dl.toString());
 		
 		
 		

@@ -1,8 +1,8 @@
 import com.sun.corba.se.impl.ior.POAObjectKeyTemplate;
 
 public class DoubleLinkedList implements List {
-	private Pokemon head = new Pokemon();
-	private Pokemon tail = new Pokemon();
+	private static Pokemon head = new Pokemon();
+	private static Pokemon tail = new Pokemon();
 	
 	public DoubleLinkedList() {
 		head.setNext(tail);
@@ -37,7 +37,8 @@ public class DoubleLinkedList implements List {
 		p.setNext(tail);
 		p.setPrev(tail.prev());
 		tail.prev().setNext(p);
-		tail.setPrev(tail.prev().next());
+		tail.setPrev(p);
+                tail.prev().next().toString();
 	}
 
 	@Override
@@ -58,11 +59,11 @@ public class DoubleLinkedList implements List {
 	}
 	
 	public String toString() {
-		Pokemon p = head.next();
+		Pokemon p = head;
 		String s = "";
 		while(p.next() != tail) {
-			s += p.toString() + "\n";
-			p = p.next();
+                    p = p.next();         
+                    s += p.toString() + "\n";
 		}
 		
 		return s;
