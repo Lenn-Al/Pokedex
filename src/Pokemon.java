@@ -40,6 +40,7 @@ public class Pokemon {
 		this.type1=type1;
 		this.type2=type2;
 		this.total=total;
+		this.hp=hp;
 		this.atk=atk;
 		this.def=def;
 		this.spatk=spatk;
@@ -49,14 +50,14 @@ public class Pokemon {
 	
 	private String convertNumber(int num) {
 		String sNr;
-		if(nr < 10) {
-			sNr = "  " + nr;
+		if(num < 10) {
+			sNr = "  " + num;
 		}
-		else if(nr < 100) {
-			sNr = " " + nr;
+		else if(num < 100) {
+			sNr = " " + num;
 		}
 		else {
-			sNr = Integer.toString(nr);
+			sNr = Integer.toString(num);
 		}
 		
 		return sNr;
