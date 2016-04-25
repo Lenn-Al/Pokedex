@@ -17,7 +17,7 @@ public class Pokemon {
 	private int spdef;
 	private int speed;
 	
-	private final int LONGEST_STRING = 15;
+	private final int LONGEST_STRING = 10;
 	
 	public Pokemon() {
 		this.nr=-1;
@@ -46,6 +46,10 @@ public class Pokemon {
 		this.spatk=spatk;
 		this.spdef=spdef;
 		this.speed=speed;
+	}
+	
+	public int getNr() {
+		return nr;
 	}
 	
 	private String convertNumber(int num) {

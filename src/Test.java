@@ -6,8 +6,9 @@ public class Test {
 	
 	public static void main(String[] args) {
 		//head = new Pokemon();
-		Pokemon pkm = new Pokemon(0, "Lukas", "Poison", "Normal", 0, 0, 0, 0, 0, 0, 0);
-		Pokemon pkm2 = new Pokemon(1, "Lenni", "Dragon", "Fire", 1000, 1000, 1000, 1000, 100, 1000, 1000);
+		Pokemon pkm = new Pokemon(7, "Lukas", "Poison", "Normal", 0, 0, 0, 0, 0, 0, 0);
+		Pokemon pkm2 = new Pokemon(3, "Lenni", "Dragon", "Fire", 100, 100, 100, 100, 100, 100, 5);
+		Pokemon pkm3 = new Pokemon(4, "Maxii", "Poison", "Ice", 200, 200, 200, 200,200,200,200);
 		//tail = new Pokemon();
 		
 		/*head.setNext(pkm);
@@ -18,13 +19,15 @@ public class Test {
 		tail.setNext(null);
 		tail.setPrev(pkm2);*/
 		                
-		dl.insert(pkm);
-		dl.insert(pkm2);
+		dl.insertSorted(pkm);
+		dl.insertSorted(pkm2);
 		System.out.println(dl.toString());
 		System.out.println();
 		dl.delete(pkm);
-                System.out.println(dl.toString());
-		
+        System.out.println(dl.toString());
+		dl.insertSorted(pkm3);
+		System.out.println();
+		System.out.println(dl.toString());		
 		
 		
 		
