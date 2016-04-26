@@ -5,6 +5,6 @@
 import java.io.BufferedReader;
 public class Pokedex {
 		public void csvRead() {
-			
+			BufferedReader br = new BufferedReader.
 		}
 }

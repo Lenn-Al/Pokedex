@@ -1,6 +1,7 @@
 //TODO @Override Annotationen richtig?!
 //TODO length überprüfen
 //TODO insertSorted statt insert schreiben um nur Methoden aus List.java zu verwenden
+//TODO x rauslassen, alles über y laufen lassen, genauso insertSorted
 
 /**
 *
@@ -101,8 +102,8 @@ public class DoubleLinkedList implements List {
 		Pokemon p = head;
 		String s = "";
 		while(p.next() != tail) {
-                    p = p.next();         
-                    s += p.toString() + "\n";
+            p = p.next();         
+            s += p.toString() + "\n";
 		}		
 		return s;
 	}
