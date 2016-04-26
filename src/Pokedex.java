@@ -37,7 +37,7 @@ public class Pokedex {
 			String line = null;
 			while ((line = br.readLine()) != null) {
 				if (line.charAt(0) == 'N') { //Erste Zeile der csv auslassen
-					line = br.readLine(); //Nächste Zeile einlesen
+					line = br.readLine(); //NÃ¤chste Zeile einlesen
 					continue;
 				}
 				String[] values = new String[11]; //Feld fuer alle Werte
