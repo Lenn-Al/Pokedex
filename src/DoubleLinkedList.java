@@ -1,14 +1,10 @@
-//TODO @Override Annotationen richtig?!
-//TODO length überprüfen
-//TODO insertSorted statt insert schreiben um nur Methoden aus List.java zu verwenden
-//TODO x rauslassen, alles über y laufen lassen, genauso insertSorted
-
 /**
 *
 * Doppelt verkettete Liste
 *
-* @author  
-* @author Maximilian von Unwerth 4568393 Group ?
+* @author Lennart Almstedt 4633202 Group 11d
+* @author Maximilian von Unwerth 4568393 Group 11d
+* @author Joshua Heinemann 4701655 Group 11d
 */
 public class DoubleLinkedList implements List {
 	
@@ -47,7 +43,7 @@ public class DoubleLinkedList implements List {
 		int l = 0;
 		Pokemon p = head.next();	
 		//Fuer jedes Element in der Liste, 
-		while(p != tail) { 
+		while (p != tail) { 
 			l++;
 			p = p.next();
 		}
@@ -69,11 +65,16 @@ public class DoubleLinkedList implements List {
 	*/
 	@Override
 	public void insert(Pokemon p) {
-		p.setNext(tail); 
-		p.setPrev(tail.prev());
-		tail.prev().setNext(p);
-		tail.setPrev(p);
-        tail.prev().next().toString();
+		Pokemon x = head;
+		Pokemon y = head.next();
+		while (y != tail && p.getNr() >= y.getNr() ) {
+			x = x.next();
+			y = y.next();
+		}		
+		p.setPrev(x);
+		p.setNext(y);
+		x.setNext(p);
+		y.setPrev(p);
 	}
 
 	/**
@@ -83,11 +84,11 @@ public class DoubleLinkedList implements List {
 	public void delete(Pokemon p) {
 		Pokemon x = head;
 		Pokemon y = head.next();		
-		while(y != tail && y != p) {
+		while (y != tail && y != p) {
 			x = x.next();
 			y = y.next();
 		}
-		if(y != tail) {
+		if (y != tail) {
 			x.setNext(y.next());
 			x.next().setPrev(y.prev());
 		}
@@ -101,7 +102,7 @@ public class DoubleLinkedList implements List {
 	public String toString() {
 		Pokemon p = head;
 		String s = "";
-		while(p.next() != tail) {
+		while (p.next() != tail) {
             p = p.next();         
             s += p.toString() + "\n";
 		}		
@@ -112,17 +113,17 @@ public class DoubleLinkedList implements List {
 	* Fuegt ein Pokemon an die richtige Position ein
 	* @param Einzufuegenden Pokemon
 	*/
-	public void insertSorted(Pokemon p) {
-		Pokemon x = head;
-		Pokemon y = head.next();
-		while(y != tail && p.getNr() >= y.getNr() ) {
-			x = x.next();
-			y = y.next();
-		}		
-		p.setPrev(x);
-		p.setNext(y);
-		x.setNext(p);
-		y.setPrev(p);
-	}
+//	public void insertSorted(Pokemon p) {
+//		Pokemon x = head;
+//		Pokemon y = head.next();
+//		while(y != tail && p.getNr() >= y.getNr() ) {
+//			x = x.next();
+//			y = y.next();
+//		}		
+//		p.setPrev(x);
+//		p.setNext(y);
+//		x.setNext(p);
+//		y.setPrev(p);
+//	}
 
 }

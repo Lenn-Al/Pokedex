@@ -1,10 +1,21 @@
-
+/**
+*
+* 
+*
+* @author  
+* @author Maximilian von Unwerth 4568393 Group ?
+*/
 public class Test {
-	//static Pokemon head;
-	//static Pokemon tail;
-	static DoubleLinkedList dl = new DoubleLinkedList();
 	
-	public static void main(String[] args) {
+	/**
+	* Neue Doppeltverkettete Liste
+	*/
+	/*static DoubleLinkedList dl = new DoubleLinkedList();
+
+	/**
+	* 
+	*/
+	/*public static void main(String[] args) {
 		//head = new Pokemon();
 		Pokemon pkm = new Pokemon(7, "Lukas", "Poison", "Normal", 0, 0, 0, 0, 0, 0, 0);
 		Pokemon pkm2 = new Pokemon(3, "Lenni", "Dragon", "Fire", 100, 100, 100, 100, 100, 100, 5);
@@ -19,7 +30,7 @@ public class Test {
 		tail.setNext(null);
 		tail.setPrev(pkm2);*/
 		                
-		dl.insertSorted(pkm);
+		/*dl.insertSorted(pkm);
 		dl.insertSorted(pkm2);
 		System.out.println(dl.toString());
 		System.out.println();
@@ -32,5 +43,5 @@ public class Test {
 		
 		
 		
-	}
+	}*/
 }

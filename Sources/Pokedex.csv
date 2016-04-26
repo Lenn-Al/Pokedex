@@ -688,7 +688,7 @@ Nr,Name,Type1,Type2,Total,HP,Attack,Defence,Sp. Atk,Sp. Def,Speed
 178,Xatu,Psychic,Flying,470,65,75,70,95,70,95
 716,Xerneas,Fairy,,680,126,131,95,131,98,99
 562,Yamask,Ghost,,303,38,30,85,55,65,30
-193,Yanma,Bug,Flying,390,65,65,45,75,45,95
+193,Yanma,Bug,Flying,390,65,65,45,75,45,95722,Pigman,Bug,,520,90,50,80,100,90,110
 469,Yanmega,Bug,Flying,515,86,76,86,116,56,95
 717,Yveltal,Dark,Flying,680,126,131,95,131,98,99
 335,Zangoose,Normal,,458,73,115,60,60,60,90
@@ -697,7 +697,7 @@ Nr,Name,Type1,Type2,Total,HP,Attack,Defence,Sp. Atk,Sp. Def,Speed
 644,Zekrom,Dragon,Electric,680,100,150,120,120,100,90
 263,Zigzagoon,Normal,,240,38,30,41,30,41,60
 571,Zoroark,Dark,,510,60,105,60,120,60,105
-570,Zorua,Dark,,330,40,65,40,80,40,65
+570,Zorua,Dark,,330,40,65,40,80,40,65720,Lennmaster,Fire,Water,400,80,20,100,80,60,60
 41,Zubat,Poison,Flying,245,40,45,35,30,40,55
 634,Zweilous,Dark,Dragon,420,72,85,70,65,70,58
 718,Zygarde,Dragon,Ground,600,108,100,121,81,95,95
