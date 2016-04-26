@@ -2,6 +2,9 @@
 //TODO public Pokemon() Konstruktor noetig? --> nullPkm ruft Konstruktor mit Parametern auf
 
 /**
+*
+* Ein Pokemon
+*
 * @author  
 * @author Maximilian von Unwerth 4568393 Group ?
 */

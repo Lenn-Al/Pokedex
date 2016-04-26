@@ -1,5 +1,6 @@
 //TODO @Override Annotationen richtig?!
 //TODO length überprüfen
+//TODO insertSorted statt insert schreiben um nur Methoden aus List.java zu verwenden
 
 /**
 *
@@ -22,10 +23,11 @@ public class DoubleLinkedList implements List {
 	
 	/**
 	* Konstruktor der Liste
+	* Am Anfang leere Liste erstellen
 	*/
 	public DoubleLinkedList() {
-		head.setNext(tail);
-		tail.setPrev(head);
+		head.setNext(tail); //Aufbau der leeren Liste: Head|Tail
+		tail.setPrev(head); // Head und Tail direkt verbunden
 	}
 	
 	/**
@@ -33,8 +35,7 @@ public class DoubleLinkedList implements List {
 	*/
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return head.next() == tail;
+		return head.next() == tail; //Leere Liste? (analog Konstruktor)
 	}
 
 	/**
@@ -58,16 +59,16 @@ public class DoubleLinkedList implements List {
 	*/
 	@Override
 	public Pokemon firstPokemon() {
-		return head;
+		return head; //Kopf der Liste ist das erste Pokemon
 	}
 
 	/**
-	* Fuegt ein Pokemon in die Liste ein
+	* Fuegt ein Pokemon hinten in die Liste ein
 	* @param Einzufuegendes Pokemon
 	*/
 	@Override
 	public void insert(Pokemon p) {
-		p.setNext(tail);
+		p.setNext(tail); 
 		p.setPrev(tail.prev());
 		tail.prev().setNext(p);
 		tail.setPrev(p);
