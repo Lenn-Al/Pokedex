@@ -13,7 +13,6 @@ import java.nio.file.Paths;
 * @author Joshua Heinemann 4701655 Group 11d
 */
 public class Pokedex {
-
 	/**
 	 * Die doppelt-verkettete Liste
 	 */

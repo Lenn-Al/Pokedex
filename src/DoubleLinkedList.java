@@ -8,23 +8,35 @@
 */
 public class DoubleLinkedList implements List {
 	
+	private Pokemon elem;
+	private DoubleLinkedList prev;
+	private DoubleLinkedList next;
+	
 	/**
 	* Kopf der Liste
 	*/
-	private static Pokemon head = new Pokemon(); 
+	private DoubleLinkedList head = new DoubleLinkedList(new Pokemon()); 
 	
 	/**
 	* Schwanz der Liste
 	*/
-	private static Pokemon tail = new Pokemon();
+	private DoubleLinkedList tail = new DoubleLinkedList(new Pokemon());
 	
 	/**
 	* Konstruktor der Liste
 	* Am Anfang leere Liste erstellen
 	*/
+	
 	public DoubleLinkedList() {
-		head.setNext(tail); //Aufbau der leeren Liste: Head|Tail
-		tail.setPrev(head); // Head und Tail direkt verbunden
+		head.next = tail;
+		tail.prev = head;
+		elem = null;
+	}
+	
+	public DoubleLinkedList(Pokemon p) {
+		head.next = null;
+		tail.prev = null;
+		elem = p;
 	}
 	
 	/**
@@ -32,7 +44,7 @@ public class DoubleLinkedList implements List {
 	*/
 	@Override
 	public boolean isEmpty() {
-		return head.next() == tail; //Leere Liste? (analog Konstruktor)
+		return next == null && prev == null;
 	}
 
 	/**
@@ -41,11 +53,11 @@ public class DoubleLinkedList implements List {
 	@Override
 	public int length() {
 		int l = 0;
-		Pokemon p = head.next();	
+		DoubleLinkedList p = head.next;	
 		//Fuer jedes Element in der Liste, 
 		while (p != tail) { 
 			l++;
-			p = p.next();
+			p = p.next;
 		}
 		return l;
 	}
@@ -56,7 +68,7 @@ public class DoubleLinkedList implements List {
 	*/
 	@Override
 	public Pokemon firstPokemon() {
-		return head; //Kopf der Liste ist das erste Pokemon
+		return head.next.elem; //Kopf der Liste ist das erste Pokemon
 	}
 
 	/**
@@ -65,16 +77,17 @@ public class DoubleLinkedList implements List {
 	*/
 	@Override
 	public void insert(Pokemon p) {
-		Pokemon x = head;
-		Pokemon y = head.next();
-		while (y != tail && p.getNr() >= y.getNr() ) {
-			x = x.next();
-			y = y.next();
+		DoubleLinkedList l = new  DoubleLinkedList(p);
+		DoubleLinkedList x = head;
+		DoubleLinkedList y = head.next;
+		while (y != tail && l.elem.getNr() >= y.elem.getNr() ) {
+			x = x.next;
+			y = y.next;
 		}		
-		p.setPrev(x);
-		p.setNext(y);
-		x.setNext(p);
-		y.setPrev(p);
+		l.setPrev(x);
+		l.setNext(y);
+		x.setNext(l);
+		y.setPrev(l);
 	}
 
 	/**
@@ -82,9 +95,9 @@ public class DoubleLinkedList implements List {
 	*/
 	@Override
 	public void delete(Pokemon p) {
-		Pokemon x = head;
-		Pokemon y = head.next();		
-		while (y != tail && y != p) {
+		DoubleLinkedList x = head;
+		DoubleLinkedList y = head.next();		
+		while (y != tail && y.elem != p) {
 			x = x.next();
 			y = y.next();
 		}
@@ -100,14 +113,43 @@ public class DoubleLinkedList implements List {
 	* @return Die Liste als String
 	*/
 	public String toString() {
-		Pokemon p = head;
+		DoubleLinkedList p = head;
 		String s = "";
-		while (p.next() != tail) {
-            p = p.next();         
+		while (p.next != tail) {
+            p = p.next;         
             s += p.toString() + "\n";
 		}		
 		return s;
 	}
+	
+	/**
+	    * An vorderes Element ankoppeln
+	    * @param pkm vorderes Pokemon
+	    */
+	    public void setPrev(DoubleLinkedList prev) {
+	        this.prev = prev;
+	    }
+	    /**
+	    * Vorheriges Element zurueckgeben
+	    * @return Vorheriges Pokemon
+	    */
+	    public DoubleLinkedList prev() {
+	        return prev;
+	    }
+	    /**
+	    * Nachfolgendes Element setzen
+	    * @param pkm Naechstes Pokemon
+	    */
+	    public void setNext(DoubleLinkedList next) {
+	        this.next = next;
+	    }
+	    /**
+	    * Naechstes Pokemon setzen
+	    * @return Nachfolgendes Pokemon
+	    */
+	    public DoubleLinkedList next() {
+	        return next;
+	    }
 	
 	/**
 	* Fuegt ein Pokemon an die richtige Position ein
