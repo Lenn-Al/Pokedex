@@ -7,16 +7,22 @@
 * @author Joshua Heinemann 4701655 Group 11d
 */
 public class DoubleLinkedList implements List {
-	
-        private int n  = 0;
+	//Speichert die aktuelle Laenge der Liste.
+    private int n  = 0;
+	//Speichert das Kopfobjekt.
 	private Node head;
-        private Node tail;
-        
-        private class Node {
-            private Pokemon item;
-            private Node prev;
-            private Node next;
-        }
+	//Speichert das Schwanzobjekt.
+    private Node tail;
+    /**
+	* Die Node-Klasse welche alle
+	* wichtigen Variablen beinhaltet.
+	* wie Item,prev,next
+	*/
+    private class Node {
+        private Pokemon item;
+        private Node prev;
+        private Node next;
+    }
 	
 	/**
 	* Kopf der Liste
@@ -38,12 +44,14 @@ public class DoubleLinkedList implements List {
 		prev = null;
 		elem = null;
 	}*/
-	
+	/**
+	* Standartkonstruktor der DoubleLinkedList
+	*/
 	public DoubleLinkedList() {
-            head = new Node();
-            tail = new Node();
-            head.next=tail;
-            tail.prev=head;
+        head = new Node();
+        tail = new Node();
+        head.next = tail;
+        tail.prev = head;
 	}
 	
 	/**
@@ -51,7 +59,7 @@ public class DoubleLinkedList implements List {
 	*/
 	@Override
 	public boolean isEmpty() {
-            return n == 0;
+        return n == 0;
 	}
 
 	/**
@@ -59,7 +67,7 @@ public class DoubleLinkedList implements List {
 	*/
 	@Override
 	public int length() {
-            return n;
+        return n;
 	}
 
 	/**
@@ -68,7 +76,7 @@ public class DoubleLinkedList implements List {
 	*/
 	@Override
 	public Pokemon firstPokemon() {
-            return head.next.item; //Kopf der Liste ist das erste Pokemon
+        return head.next.item; //Kopf der Liste ist das erste Pokemon
 	}
 
 	/**
@@ -77,20 +85,19 @@ public class DoubleLinkedList implements List {
 	*/
 	@Override
 	public void insert(Pokemon p) {
-            Node x= head;
-            Node y=head.next;
-            Node m = new Node();
-            m.item = p;
-
-            while(y != tail && y.item.getNr() != p.getNr()) {
-                x = x.next;
-                y = y.next;
-            }
-            x.next = m;
-            y.prev = m;
-            m.prev = x;
-            m.next = y;
-            n++;
+        Node x = head;
+        Node y = head.next;
+        Node m = new Node();
+        m.item = p;
+        while (y != tail && y.item.getNr() != p.getNr()) {
+            x = x.next;
+            y = y.next;
+        }
+        x.next = m;
+        y.prev = m;
+        m.prev = x;
+        m.next = y;
+        n++;
 	}
 
 	/**
@@ -98,16 +105,16 @@ public class DoubleLinkedList implements List {
 	*/
 	@Override
 	public void delete(Pokemon p) {
-            Node x = head;
-            Node y = head.next;
-            
-            while(y != head && y.item != p) {
-                x = x.next;
-                y = y.next;
-            }
-            y.next.prev = x;
-            x.next = y.next;
-            n--;
+        Node x = head;
+        Node y = head.next;
+       
+        while (y != head && y.item != p) {
+            x = x.next;
+            y = y.next;
+        }
+        y.next.prev = x;
+        x.next = y.next;
+        n--;
 	}
 	
 	/**
@@ -115,15 +122,15 @@ public class DoubleLinkedList implements List {
 	* @return Die Liste als String
 	*/
 	public String toString() {
-            Node x = head.next;
-            String s = "";
+        Node x = head.next;
+        String s = "";
+          
+        while (x != tail) {
+            s += x.item.toString() + "\n";
+            x = x.next;
+        }
             
-            while(x != tail) {
-                s+= x.item.toString() + "\n";
-                x = x.next;
-            }
-            
-            return s;
+        return s;
 	}
 	
 //	/**
