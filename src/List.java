@@ -1,8 +1,11 @@
 /**
  * Interface for a List
- *
- * @author Jane Doe 1234567 Group 42h
- * @author John Doe 1234567 Group 42h
+ * Das List-Interface, welches uns zur verfuegung
+ * gestellt wurde. Zur Vollstaendigkeit stehen
+ * hier wir als Author
+ * @author Lennart Almstedt 4633202 Group 11d
+ * @author Maximilian von Unwerth 4568393 Group 11d
+ * @author Joshua Heinemann 4701655 Group 11d
  */
 public interface List {
     /**

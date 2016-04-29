@@ -20,6 +20,10 @@ public class Pokedex {
 
 	/**
 	 * Main-Methode
+	 * Haupteinstiegspunkt des Programms,
+	 * die csv-Datei wird eingelesen und
+	 * die DoubleLinkedList wird gefuellt,
+	 * sowie anschliessend ausgegeben.
 	 * @param args Mainmethoden-Paramter
 	 */
 	public static void main(String[] args) {

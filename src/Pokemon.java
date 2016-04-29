@@ -66,7 +66,7 @@ public class Pokemon {
     */
     private final int longestString = 15;
     /**
-    * NULL-Pokemon-Konstruktor
+    * NULL-Pokemon-Konstruktor (Standartkonstruktor)
     */
     public Pokemon() {
         this.nr = -1;
@@ -81,7 +81,8 @@ public class Pokemon {
         this.speed = 0;
     }
     /**
-    * Standard Pokemon-Konstruktor
+    * Pokemon-Konstruktor, welcher das Objekt mit folgenden Werten
+	* initialisiert.
     * @param nr Nummer des Pokemon
     * @param name Name des Pokemon
     * @param type1 Typ1 des Pokemon
@@ -127,12 +128,10 @@ public class Pokemon {
         if (num < 10) {
             //Bei einstelliger Ziffer 2 Leerzeichen hinzufuegen
             sNr = "  " + num;
-        }
-        else if (num < 100) {
+        } else if (num < 100) {
             //Bei zweistelligem Wert + 2 Leerzeichen
             sNr = " " + num;
-        }
-        else {
+        } else {
             sNr = Integer.toString(num);
         }
         return sNr;
@@ -173,7 +172,7 @@ public class Pokemon {
         this.next = pkm;
     }
     /**
-    * Naechstes Pokemon setzen
+    * Gibt naechste Pokemon zurueck
     * @return Nachfolgendes Pokemon
     */
     public Pokemon next() {
