@@ -60,7 +60,7 @@ public class DoubleLinkedList implements List {
 	}
 
 	/**
-	* Fuegt ein Pokemon hinten in die Liste ein
+	* Fuegt ein Pokemon sortiert in die Liste ein
 	* @param Einzufuegendes Pokemon
 	*/
 	@Override
@@ -69,7 +69,7 @@ public class DoubleLinkedList implements List {
         Node y = head.next;
         Node m = new Node();
         m.item = p;
-        while (y != tail && y.item.getNr() != p.getNr()) {
+        while (y != tail && y.item.getNr() <= p.getNr()) {
             x = x.next;
             y = y.next;
         }
